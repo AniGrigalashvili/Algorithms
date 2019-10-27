@@ -8,34 +8,47 @@ namespace ConsoleApp3
     {
         public void Run()
         {
-            int[] array = new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 10 };
-            Console.WriteLine(quicksort_(array));
-        }
-        public int quicksort_(int[] array)
-        {
-            int P = 0;
-            int[] less_array = new int[array.Length];
-            int[] greater_array = new int[array.Length];
-            if (array.Length < 2)
-                return array;
-            else
+            int[] array = new int[] { 1, 2, 7, 5, 50, 7, 200, 9, 10 };
+            int length = array.Length;
+            quicksort_(array, 0, length - 1);
+            for (int i = 0; i < length; i++)
             {
-                P = array[0];
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (array[i] < P)
-                    {
-                        less_array[i] = array[i];
-                    }
-                    else
-                        greater_array[i] = array[i];
-                }
-
+                Console.Write(array[i]);
             }
-            return quicksort_(less_array) + P + quicksort_(greater_array);
+        }
+        public int Func(int[] array, int low, int high)
+        {
+            int p = array[high];
 
+            int lowIndex = (low - 1);
+            for (int j = low; j < high; j++)
+            {
+                if (array[j] <= p)
+                {
+                    lowIndex++;
+
+                    int temp = array[lowIndex];
+                    array[lowIndex] = array[j];
+                    array[j] = temp;
+                }
+            }
+
+            int temp1 = array[lowIndex + 1];
+            array[lowIndex + 1] = array[high];
+            array[high] = temp1;
+
+            return lowIndex + 1;
         }
+        public void quicksort_(int[] array, int low, int high)
+        {
+            if (low < high)
+            {
+                int Index = Func(array, low, high);
+                quicksort_(array, low, Index - 1);
+                quicksort_(array, Index + 1, high);
+            }
         }
+    }
 
 }
 
