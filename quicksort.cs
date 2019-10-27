@@ -16,10 +16,10 @@ namespace ConsoleApp3
             int P = 0;
             int[] less_array = new int[array.Length];
             int[] greater_array = new int[array.Length];
-            //if (array.Length < 2)
-            //    return array;
-            //else
-            //{
+            if (array.Length < 2)
+                return array;
+            else
+            {
                 P = array[0];
                 for (int i = 0; i < array.Length; i++)
                 {
@@ -31,7 +31,7 @@ namespace ConsoleApp3
                         greater_array[i] = array[i];
                 }
 
-            //}
+            }
             return quicksort_(less_array) + P + quicksort_(greater_array);
 
         }
