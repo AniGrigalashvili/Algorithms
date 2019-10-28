@@ -10,9 +10,11 @@ namespace ConsoleApp3
             //new SelectionSort().Run();
             //new quicksort().Run();
 
-            var s = new RecursiveSum();
-            Console.WriteLine(s.Sum(new int[] { 1, 2, 3 }));
-            Console.ReadLine();
+            //var s = new RecursiveSum();
+            //Console.WriteLine(s.Sum(new int[] { 1, 2, 3 }));
+            //Console.ReadLine();
+
+            new Concat().Run();
 
         }
 
