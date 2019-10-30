@@ -14,7 +14,9 @@ namespace ConsoleApp3
             //Console.WriteLine(s.Sum(new int[] { 1, 2, 3 }));
             //Console.ReadLine();
 
-            new Concat().Run();
+            //new Concat().Run();
+
+            new BFS().Main();
 
         }
 
